@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+<meta name="format-detection" content="telephone=no" />
+<title>easyScroll</title>
+<style>
+h2{text-align:center;margin-top:50px;}
+*{padding:0;margin:0;list-style:none;}
+#test1{width:320px;height:200px;overflow:hidden;margin:10px auto;}
+#test1 ul{width:100%;height:1000px;overflow:hidden;}
+#test1 li{width:100%;height:50px;line-height:50px;text-align:center;float:left;}
+#test1 li:nth-child(even){background:#999;}
+#test1 li:nth-child(odd){background:#eee;}
+
+
+*{padding:0;margin:0;list-style:none;}
+#test2{width:320px;height:50px;overflow:hidden;margin:10px auto;}
+#test2 ul{height:50px;width:1600px;overflow:hidden;}
+#test2 li{width:80px;height:50px;line-height:50px;text-align:center;float:left;}
+#test2 li:nth-child(even){background:#999;}
+#test2 li:nth-child(odd){background:#eee;}
+
+
+</style>
+</head>
+<body>
+<h2>上下滑动</h2>
+<div id="test1">
+    <ul>
+        <li>第1个</li>
+        <li>第2个</li>
+        <li>第3个</li>
+        <li>第4个</li>
+        <li>第5个</li>
+        <li>第6个</li>
+        <li>第7个</li>
+        <li>第8个</li>
+        <li>第9个</li>
+        <li>第10个</li>
+        <li>第11个</li>
+        <li>第12个</li>
+        <li>第13个</li>
+        <li>第14个</li>
+        <li>第15个</li>
+        <li>第16个</li>
+        <li>第17个</li>
+        <li>第18个</li>
+        <li>第19个</li>
+        <li>第20个</li>
+    </ul>
+</div>
+<h2>左右滑动</h2>
+<div id="test2">
+    <ul>
+        <li>第1个</li>
+        <li>第2个</li>
+        <li>第3个</li>
+        <li>第4个</li>
+        <li>第5个</li>
+        <li>第6个</li>
+        <li>第7个</li>
+        <li>第8个</li>
+        <li>第9个</li>
+        <li>第10个</li>
+        <li>第11个</li>
+        <li>第12个</li>
+        <li>第13个</li>
+        <li>第14个</li>
+        <li>第15个</li>
+        <li>第16个</li>
+        <li>第17个</li>
+        <li>第18个</li>
+        <li>第19个</li>
+        <li>第20个</li>
+    </ul>
+</div>
+<script src="easyScroll.js"></script>
+<script>
+easyScroll('#test1');
+easyScroll('#test2',{
+    align:'x'
+});
+</script>
+</body>
+</html>
