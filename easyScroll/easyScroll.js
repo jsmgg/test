@@ -1,7 +1,3 @@
-/*
-    滑动公用代码
-    目前：导览图、地铁线路滑动、电影票滑动在使用
-*/
 (function(global) {
 'use strict';
 var utils = {
