@@ -318,17 +318,7 @@ Chart.prototype = {
 }
 
 
-/*
-ctx.beginPath();
-ctx.moveTo(0,0);
-ctx.lineTo(510,0);
-ctx.lineTo(510,100);
-ctx.lineTo(0,100);
-ctx.lineTo(0,0);
-//ctx.stroke();
-ctx.fill();
-ctx.closePath();
-*/
+
 var chart = new Chart({
     view:document.getElementById('js_chart'),
     clickDom:document.getElementById('js_click_view'),
