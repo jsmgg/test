@@ -19,7 +19,7 @@ function Chart(options){
     this.data1 = options.data1;//折线数据 帮助人数
     this.data2 = options.data2;//柱状图数据  有效反馈数
     this.leftTextWidth = 0;//20*scale;//左边文字宽度
-    this.bottomTextHeight = 20*scale;//下面文字高度
+    this.bottomTextHeight = 25*scale;//下面文字高度
     this.topCutHeight = 6*scale;//坐标轴最上面留白高度
     this.pieWidth = 15*scale;//柱状图宽度
     this.Xleft = 10*scale;//左边间距
@@ -42,7 +42,11 @@ Chart.prototype = {
         this.pointX = this.get_x(this.data2.length);
         this.draw_pie();
         this.draw_ploy(min_max1.max);
-        this.click && this.draw_click({x:this.pointX[this.pointX.length-1],y:this.topCutHeight});
+        var self = this;
+        setTimeout(function(){
+            self.click && self.draw_click({x:self.pointX[self.pointX.length-1],y:self.topCutHeight+10});
+        },100);
+        
     },
     init_view : function(){
         var view = this.view;
@@ -133,14 +137,15 @@ Chart.prototype = {
         画柱状图
     */
     draw_pie : function(){
-        var ctx = this.ctx;
-        var pointX = this.pointX;
-        var pointY = this.data2;
-        var pix = this.pix;
-        var pieWidth = this.pieWidth;
+        var self = this;
+        var ctx = self.ctx;
+        var pointX = self.pointX;
+        var pointY = self.data2;
+        var pix = self.pix;
+        var fontSize = 11*self.scale;
         ctx.beginPath();
         ctx.strokeStyle='#9cc4f6';
-        ctx.lineWidth = pieWidth;//这里用线条代替柱状图
+        ctx.lineWidth = self.pieWidth;//这里用线条代替柱状图
         pointY.forEach(function( item, i ){
             ctx.moveTo(pointX[i],0);
             ctx.lineTo(pointX[i],(item.num/pix)|0);
@@ -151,10 +156,10 @@ Chart.prototype = {
         ctx.scale(1,-1);
         ctx.beginPath();
         ctx.fillStyle = '#333333';
-        ctx.font = 'lighter '+(11*this.scale)+'px  sans-serif';
+        ctx.font = 'lighter '+fontSize+'px  sans-serif';
         ctx.textAlign = 'center';
         pointY.forEach(function( item, i ){
-            ctx.fillText(item.month+'月', pointX[i],pieWidth);
+            ctx.fillText(item.month+'月', pointX[i],self.bottomTextHeight-(fontSize/2 | 0));
              
         });
         ctx.closePath();
@@ -224,10 +229,10 @@ Chart.prototype = {
                 index = i;
             }
         });
-        index != -1 && self.draw_tips( index, point.y );
+        index != -1 && self.draw_tips( index );
         return index;
     },
-    draw_tips : function( index,y ){
+    draw_tips : function( index ){
         var self = this;
         var ctx = self.clickCtx;
         var num1 = self.data1[index].num;
@@ -238,18 +243,16 @@ Chart.prototype = {
         var scale = this.scale;
         var minWidth = 45*scale;//大矩形最小宽度
         var fontSize = 10*scale;
-        var boxWidth = (minWidth+(_max+'').length*fontSize)|0;
+        var boxWidth = (minWidth+(_max+'').length/2*fontSize+10*scale)|0;
         var maxRectHeight = 35 * scale;//大矩形高度
         var minRectHeight = 12 * scale;//小矩形高度
         var maxArc = 4 * scale;//大圆半径
         var minArc = 2 * scale;//小圆半径
-        var point = {x:x-this.pieWidth/2,y:this.systemHeight-y};//小矩形宽度跟 柱状图一致  min+parseInt((max-min)/2)
+        var pointY = self.pix == 0 ? (-minRectHeight+maxArc) : (num1/self.pix-minRectHeight+maxArc)|0;
+        var point = {x:x-this.pieWidth/2,y:pointY};//小矩形宽度跟 柱状图一致  min+parseInt((max-min)/2)
         var cutX = 0;
         if( point.x+boxWidth+2*scale > this.systemWidth ){//最右边
             cutX = point.x+boxWidth - this.systemWidth+2*scale;
-        }
-        if( point.y < 10 ){//最小为10
-            point.y = 10;
         }
         if( point.y > max ){
             point.y = max;
@@ -296,8 +299,8 @@ Chart.prototype = {
         var ctx = this.clickCtx;
         var num1 = this.data1[index].num;
         var num2 = this.data2[index].num;
-        var text1 = '帮助人数';
-        var text2 = '有效反馈';
+        var text1 = '统计数一';
+        var text2 = '统计数二';
         var scale = this.scale;
         ctx.save();
         ctx.scale(1,-1);
@@ -316,7 +319,6 @@ Chart.prototype = {
         ctx.restore();
     }
 }
-
 
 
 var chart = new Chart({
