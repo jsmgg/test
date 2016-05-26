@@ -1,0 +1,176 @@
+#js_pagebody .scrollPage{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    width:100%;
+    height:100%;
+    bottom:0;
+    padding-top:50px;
+    margin:0;
+    z-index:2000;
+    -webkit-transform:translateZ(0);
+}
+
+.scrollPage .hide,.scrollPage.hide{display:none;}
+
+.scrollPage_mask{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity:0.1;
+    -webkit-transition: opacity 0.8s;
+    z-index:1500;
+}
+.scrollPage_mask.show{
+    opacity: 0.6;
+}
+.scrollPage .titlebar_hack{
+    position:fixed;
+    height:20px;
+    width:100%;
+    left:0;
+    top:0;
+    opacity:0;
+    -webkit-transition: opacity 0.6s;
+    background:#fff;
+    z-index:1600;
+}
+.scrollPage .titlebar_hack.show{
+    opacity: 1;
+}
+.scrollPage_page{
+    -webkit-transition: -webkit-transform .3s;
+    -webkit-transform: translate3d(0,100%,0);
+    overflow:hidden;
+    background:#fff;
+    width:100%;
+    height:100%;
+    position:relative;
+    z-index:1700;
+}
+.scrollPage_page.up{
+    -webkit-transform: translate3d(0,0,0);
+}
+.scrollPage_header{
+    width:100%;
+}
+
+.scrollPage_content{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    -webkit-transform-style: flat;
+    -webkit-transform:translateZ(0);
+}
+.scrollPage_scroller{
+    width:100%;
+    background:#fff;
+    position:relative;
+    z-index:1;
+}
+.scrollPage_top_tips{
+    position:absolute;
+    top:0;
+    left:0;
+    height:44px;
+    line-height:44px;
+    background:rgba(246,246,246,0.3);
+    font-size:14px;
+    z-index:0;
+    width:100%;
+    color:#0091ff;
+    text-align:center;
+    opacity:0.01;
+    -webkit-transform:translateZ(0);
+}
+.scrollPage_top_tips:before{
+    content:'';
+    display:inline-block;
+    width:32px;
+    height:22px;
+    background:url(../img/xiala.png) center center no-repeat;
+    background-size:22px 22px;
+    margin-bottom:-6px;
+    transition:300ms ease-out;
+}
+.scrollPage_top_tips.up:before{
+    -webkit-transform:rotateZ(180deg);
+}
+.scrollPage_loading{
+    position:absolute;
+    bottom:0;
+    left:0;
+    height:44px;
+    line-height:44px;
+    background:rgba(200,200,200,0.9);
+    font-size:14px;
+    z-index:3;
+    width:100%;
+    color:#666;
+    text-align:center;
+    display:none;
+    opacity:0;
+    transition:600ms ease-out;
+}
+.scrollPage_loading.show{
+    opacity:1;
+}
+
+
+/*默认头部样式*/
+/* 下面是scrollPage中展示的评论样式 */
+.default_header ul.comment_tabs{
+    position:relative;
+    left:0;
+    top:0;
+}
+.default_header .top{
+    height:4.4rem;
+    width:100%;
+    position:relative;
+}
+.default_header .top:after{
+    content:'';
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:1px;
+    background:#c2c2c2;
+    -webkit-transform:scale(1,0.5);
+    -webkit-transform-origin:left top;
+}
+.default_header .top h2{
+    height:4.4rem;
+    line-height:4.4rem;
+    padding:0 6rem;
+    font-size:1.6rem;
+    text-align:center;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.default_header .top i{
+    position:absolute;
+    left:0;
+    top:0;
+    height:4.4rem;
+    width:4.4rem;
+    background:url(../img/closeScrollpage.png) center center no-repeat;
+    background-size:1.4rem 1.4rem;
+}
+.default_header .top em{
+    position:absolute;
+    right:0;
+    top:0;
+    height:4.4rem;
+    line-height:4.4rem;
+    color:#0091ff;
+    font-size:1.4rem;
+    text-align:center;
+    padding:0 15px;
+}
