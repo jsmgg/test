@@ -1,1 +1,11 @@
-1、easyScroll是看了iscroll源码后，结合自己开发需要抽离出来的一个小插件，已经在项目中使用了，暂时没发现什么大问题，性能方面也很不错。
+从master分支新建一个分支：git checkout -b 763 origin/master --no-track
+第一次提交分支：git push --set-upstream origin 763
+
+git checkout -b 759 origin/759   // 第一次切换分支这样搞
+git checkout 759  // 第二次切换分支这样搞
+merge代码：在当前分支下执行 git merge origin/hzm768;  把hzm768分支代码合到当前分支
+
+
+
+position:-webkit-sticky
+-webkit-overflow-scrolling:touch;
