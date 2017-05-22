@@ -1,0 +1,133 @@
+.case-wrap{
+    width:100%;
+    background:#edf3fa;
+    overflow:hidden;
+}
+.case{
+    background:url(../assets/case-bg.png) no-repeat;
+    background-position:0px 240px;
+    .case-banner-container{
+        position:relative;
+        margin-top:138px;
+        .case-banner{
+            width:1032px;
+            margin:0 auto;
+            li{
+                width:912px;
+                height:315px;
+                padding:30px;
+                padding-left:90px;
+                background:#fff;
+                figure{
+                    float:right;
+                    img{
+                        width:575px;
+                        height:312px;
+                        border-radius:6px;
+                    }
+                }
+                figcaption{
+                    width:230px;
+                    float:left;
+                    .headpic{
+                        width:112px;
+                        height:112px;
+                        background:url(../assets/headpic.png) no-repeat;
+                        border-radius:50%;
+                        margin:-(57px+30px) auto 0;
+                    }
+                    h2{
+                        text-align:center;
+                        font-size:24px;
+                        font-weight:bold;
+                        padding:30px 0 20px 0;                     
+                    }
+                    .labels{
+                        overflow:hidden;
+                        span{
+                            float:left;
+                            color:#fff;
+                            line-height:30px;
+                            padding:0 15px;
+                            font-size:16px;
+                            font-weight:bold;
+                            margin-right:20px;
+                            border-radius:12px;
+                            &:last-child{
+                                margin-right:0;
+                            }
+                            &.green{
+                                background:#72b727;
+                            }
+                            &.red{
+                                background:#e1320f;
+                            }
+                        }
+                    }
+                    .msg{
+                        margin-top:42px;
+                        font-size:14px;
+                        line-height:28px;
+                        color:#545454;
+                    }
+                }
+            }
+        }
+        .ears{
+            span{
+                cursor:pointer;
+                position:absolute;
+                width:70px;
+                height:140px;
+                top:115px;
+                background-repeat:no-repeat;
+                background-position:center;
+                transition:background-color 0.6s ease;
+                &.left{
+                    background-image:url(../assets/ear-dark.png);
+                    left:0;
+                    &:hover{
+                       background-image:url(../assets/ear-light.png);
+                      transform:rotateZ(180deg);                 
+                    }
+                }   
+                &.right{
+                    background-image:url(../assets/ear-dark.png);
+                    transform:rotateZ(180deg);
+                    right:0;
+                    &:hover{
+                         background-image:url(../assets/ear-light.png);     
+                         transform:rotateZ(0);                        
+                    }
+                }
+                &:hover{
+                    background-color:#343434;
+                }         
+            }
+        }
+        .case-pagination{
+            margin-top:60px;
+            margin-bottom:190px;
+            width:102px;
+            margin-left:50%;
+            transform:translateX(-50%);
+            overflow:hidden;
+            span{
+                display:block;
+                float:left;
+                width:12px;
+                height:12px;
+                border-radius:50%;
+                background:#dfe4e9;
+                margin-right:18px;
+                opacity:1;
+                &:last-child{
+                    margin-right:0;
+                }
+                &.sel{
+                    background:#006ad4;
+                } 
+            }
+        }
+    }   
+}

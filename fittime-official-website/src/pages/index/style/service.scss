@@ -1,0 +1,39 @@
+.service{
+    background:url(../assets/service-bg.png) no-repeat;
+    background-position:0 263px;
+    overflow:hidden;
+    padding-bottom:62px;
+    .service-list{
+        width:1032px;
+        padding-top:172px;
+        margin:0 auto;
+        li{
+            float:left;
+            width:500px;
+            margin-right:32px;
+            &:nth-child(2n){
+                margin-right:0;
+            }
+            figure{
+                img{
+                    width:500px;
+                    height:257px;
+                }
+            }
+            figcaption{
+                margin-top:25px;
+                margin-bottom:103px;
+                h3{
+                    line-height:15px*2+24px;
+                    font-size:24px;
+                    color:#333;
+                }
+                p{
+                    line-height:5px*2+14px;
+                    font-size:14px;
+                    color:#999;
+                }
+            }
+        }
+    }
+}

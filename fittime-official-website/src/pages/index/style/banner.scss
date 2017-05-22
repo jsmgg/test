@@ -1,0 +1,42 @@
+.banner{
+    width:100%;
+    position:relative;
+    .banner-list{
+        $bannerHeight:1010px;
+        width:100%;
+        height:$bannerHeight;
+        .banner-item{
+            a.banner-link{
+               display:block;
+               height:$bannerHeight;
+               background-image:url(../assets/banner.jpg);
+               background-position:center;
+               background-size:cover;
+               background-repeat:no-repeat;
+            }
+        }
+    }
+    .swiper-pagination{
+        position:absolute;
+        z-index:1;
+        left:50%;
+        transform:translateX(-50%);
+        bottom:25px;
+        padding:10px 0;
+        width:185px;
+        .swiper-pagination-bullet{
+            float:left;
+            width:50px;
+            height:4px;
+            background:#fff;
+            border-radius:0;
+            &.swiper-pagination-bullet-active{
+                background:#666;
+            }
+            margin-right:10px;
+            &:last-child{
+                margin-right:0;
+            }
+        } 
+    }
+}

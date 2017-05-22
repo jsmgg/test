@@ -1,0 +1,33 @@
+@import "src/assets/style/reset.scss";
+@import "src/assets/style/config.scss";
+@import "src/assets/style/common.scss";
+
+
+@import './banner.scss';
+@import './service.scss';
+@import './case.scss';
+@import './info.scss';
+@import './more.scss';
+
+.common-block{
+    padding-top:134px;
+    .block-title{
+        font-size:34px;
+        line-height:34px;
+        font-weight:bold;
+        padding-bottom:34px;
+        position:relative;
+        text-align:center;
+        &::before{
+            content:' ';
+            width:70px;
+            height:4px;
+            background:#666;
+            position:absolute;
+            left:50%;
+            bottom:0;
+            margin-left:-35px;
+        }
+    }
+    
+}

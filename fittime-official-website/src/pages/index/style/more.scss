@@ -1,0 +1,67 @@
+.more-wrap{
+    background:#222c36;
+}
+.more{
+    background:url(../assets/more-bg.png) no-repeat;
+    background-position:0px 200px;
+    .more-title{
+        font-size:36px;
+        font-weight:bold;
+        color:#fff;
+        padding-top:127px;
+        padding-bottom:40px;
+        position:relative;
+        &::after{
+            content:' ';
+            display:block;
+            width:70px;
+            height:4px;
+            background:#fff;
+            position:absolute;
+            bottom:0;
+            left:0;
+        }
+    }
+    .more-form{
+        overflow:hidden;
+        margin-top:88px;
+        .form-item{
+            float:left;
+            &:nth-child(1){
+             margin-right:77px;                
+            }
+            &:nth-child(2){
+             margin-right:47px;                
+            }
+            .tip{
+                font-size:14px;
+                font-weight:bold;
+                color:#fff;
+                padding-right:18px;
+            }
+            .input{
+                width:232px;
+                height:50px;
+                line-height:50px;
+                padding-left:20px;
+                padding-right:20px;
+                border-radius:30px;
+                font-size:14px;
+            }
+            input[type='button']{
+                width:120px;
+                text-align:center;
+                cursor:pointer;
+                background:#006ad4;
+                color:#fff;
+                border:0;
+            }
+        }
+    }
+    .more-desc{
+        padding:108px 0 113px;
+        font-size:14px;
+        font-weight:bold;
+        color:#787878;
+    }
+}

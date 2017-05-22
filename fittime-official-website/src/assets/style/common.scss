@@ -1,0 +1,112 @@
+.content-wrap{
+    width:$contentWidth;
+    margin:0 auto;
+}
+
+.header{
+    $headerHeight:62px;
+    height:$headerHeight;
+    background:#fff;
+    .logo{
+        background:url(/src/assets/images/logo.png) no-repeat;
+        background-position:center;
+        width:166px;
+        height:100%;
+        float:left;
+    } 
+    .nav{
+        float:right; 
+        p{
+            float:left;
+            margin-left:40px;
+            line-height:$headerHeight;
+            a{
+                display:block;
+                line-height:$headerHeight;
+                padding:0 15px;
+                font-size:14px;
+            }
+        }     
+    }
+}
+.footer{
+    padding-top:100px;
+    padding-bottom:144px;
+    .link{
+        overflow:hidden;
+        .main{
+            float:left;
+            padding-bottom:76px;
+            dl{
+                width:132px;
+                float:left;
+                padding-left:14px;
+                padding-right:70px;
+                dt{
+                    font-size:16px;
+                    font-weight:bold;
+                    color:#000;
+                    padding-bottom:26px;
+                }
+                dd{
+                    a{
+                        font-size:12px;
+                        color:#8c8c8c;
+                        display:block;
+                        line-height:40px;
+                    }
+                }
+            }
+        }
+        .aside{
+            float:right;
+            border-left:1px solid #d9d9d9;
+            padding-left:100px;
+            p{
+                font-size:16px;
+                font-weight:bold;
+                padding-bottom:20px;
+            }
+            a{
+                display:block;
+                font-size:20px;
+                color:#006ad4;
+                font-weight:bold;
+                border:1px solid #006ad4;
+                border-radius:30px;
+                width:162px;
+                height:40px;
+                line-height:40px;
+                text-align:center;
+            }
+        }
+    }
+    .copy{
+        font-size:12px;
+        line-height:8px;
+        color:#8c8c8c;
+        span:not(:last-child){
+            padding-right:35px;
+            position:relative;
+            &::after{
+                content:' ';
+                background:#8c8c8c;
+                position:absolute;
+                right:0;
+                height:12px;
+                width:1px;
+                top:5px;
+            }
+        }
+        span:not(:first-child){
+            padding-left:35px;
+        }
+        .copy-info{
+            float:left;
+
+        }
+        .copy-link{
+            float:right;
+        }
+    }
+}
